@@ -1,3 +1,96 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulátor Výpůjčky</title>
+    <style>
+        /* General Reset */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        /* Centered Container */
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin: 5px 0 5px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+input, button {
+            width: 95%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            font-size: 1rem;
+            color: #28a745;
+            margin-top: 15px;
+		padding: 10px;
+       
+        }
+
+        /* Responsive Typography */
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         // Define pricing logic
@@ -160,6 +253,10 @@ function calculateRentalPrice(carClass, kilometres, hours) {
     });
 </script>
 
+<p> 
+
+<div class="container">
+
 <form>
     <label for="carClass">Typ auta:</label>
     <select id="carClass">
@@ -178,4 +275,13 @@ function calculateRentalPrice(carClass, kilometres, hours) {
     
     <button type="button" id="calculatePrice">Najít nejlepší cenu</button>
 </form>
-<div id="result"></div>
+
+<p>
+
+<div id="result"></div> 
+
+</div>
+
+</body>
+
+</html>
