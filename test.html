@@ -1,0 +1,181 @@
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Define pricing logic
+        const pricing = {
+            A: {
+                hourly: { rate1: 69, rate2: 39, kmRate: 6.9 },
+                fixed: {
+    "Balíček XS": { price: 399, freeHours: 3, freeKm: 50 },
+    "Balíček S": { price: 299, freeHours: 6, freeKm: 0 },
+    "Balíček S+": { price: 749, freeHours: 6, freeKm: 100 },
+    "Balíček M": { price: 1390, freeHours: 12, freeKm: 180 },
+    "Balíček M+": { price: 1790, freeHours: 12, freeKm: 300 },
+    "Balíček L": { price: 2090, freeHours: 24, freeKm: 300 },
+    "Balíček XL": { price: 1990, freeHours: 48, freeKm: 120 },
+    "Balíček XL+": { price: 2290, freeHours: 48, freeKm: 300 },
+    "Balíček XXL": { price: 2490, freeHours: 72, freeKm: 400 },
+    "Jaro 7 dní": { price: 999999, freeHours: 168, freeKm: 1200 },
+    "Jaro 10 dní": { price: 999999, freeHours: 240, freeKm: 1200 },
+    "Go 7 dní": { price: 6800, freeHours: 168, freeKm: 700 },
+    "Go 4,5 dne": { price: 999999, freeHours: 108, freeKm: 600 },
+    "Go 4 dny": { price: 2990, freeHours: 96, freeKm: 500 }
+}
+,
+            },
+            B: {
+                hourly: { rate1: 79, rate2: 49, kmRate: 7.9 },
+                fixed: {
+    "Balíček XS": { price: 449, freeHours: 3, freeKm: 50 },
+    "Balíček S": { price: 299, freeHours: 6, freeKm: 0 },
+    "Balíček S+": { price: 849, freeHours: 6, freeKm: 100 },
+    "Balíček M": { price: 1590, freeHours: 12, freeKm: 180 },
+    "Balíček M+": { price: 1990, freeHours: 12, freeKm: 300 },
+    "Balíček L": { price: 2390, freeHours: 24, freeKm: 300 },
+    "Balíček XL": { price: 2290, freeHours: 48, freeKm: 120 },
+    "Balíček XL+": { price: 2590, freeHours: 48, freeKm: 300 },
+    "Balíček XXL": { price: 2790, freeHours: 72, freeKm: 400 },
+    "Jaro 7 dní": { price: 9999, freeHours: 168, freeKm: 1200 },
+    "Jaro 10 dní": { price: 11999, freeHours: 240, freeKm: 1200 },
+    "Go 7 dní": { price: 7800, freeHours: 168, freeKm: 700 },
+    "Go 4,5 dne": { price: 4090, freeHours: 108, freeKm: 600 },
+    "Go 4 dny": { price: 3290, freeHours: 96, freeKm: 500 }
+}
+,
+            },
+            C: {
+                hourly: { rate1: 99, rate2: 69, kmRate: 7.9 },
+                fixed: {
+    "Balíček XS": { price: 549, freeHours: 3, freeKm: 50 },
+    "Balíček S": { price: 399, freeHours: 6, freeKm: 0 },
+    "Balíček S+": { price: 1049, freeHours: 6, freeKm: 100 },
+    "Balíček M": { price: 1990, freeHours: 12, freeKm: 180 },
+    "Balíček M+": { price: 2390, freeHours: 12, freeKm: 300 },
+    "Balíček L": { price: 2990, freeHours: 24, freeKm: 300 },
+    "Balíček XL": { price: 2890, freeHours: 48, freeKm: 120 },
+    "Balíček XL+": { price: 3190, freeHours: 48, freeKm: 300 },
+    "Balíček XXL": { price: 3390, freeHours: 72, freeKm: 400 },
+    "Jaro 7 dní": { price: 10999, freeHours: 168, freeKm: 1200 },
+    "Jaro 10 dní": { price: 12999, freeHours: 240, freeKm: 1200 },
+    "Go 7 dní": { price: 9900, freeHours: 168, freeKm: 700 },
+    "Go 4,5 dne": { price: 4390, freeHours: 108, freeKm: 600 },
+    "Go 4 dny": { price: 3890, freeHours: 96, freeKm: 500 }
+}
+,
+            },
+ 	D: {
+                hourly: { rate1: 109, rate2: 79, kmRate: 8.9 },
+                fixed: {
+    "Balíček XS": { price: 749, freeHours: 3, freeKm: 50 },
+    "Balíček S": { price: 499, freeHours: 6, freeKm: 0 },
+    "Balíček S+": { price: 1349, freeHours: 6, freeKm: 100 },
+    "Balíček M": { price: 2290, freeHours: 12, freeKm: 180 },
+    "Balíček M+": { price: 2690, freeHours: 12, freeKm: 300 },
+    "Balíček L": { price: 3290, freeHours: 24, freeKm: 300 },
+    "Balíček XL": { price: 3190, freeHours: 48, freeKm: 120 },
+    "Balíček XL+": { price: 3290, freeHours: 48, freeKm: 300 },
+    "Balíček XXL": { price: 3690, freeHours: 72, freeKm: 400 },
+    "Jaro 7 dní": { price: 11999, freeHours: 168, freeKm: 1200 },
+    "Jaro 10 dní": { price: 13999, freeHours: 240, freeKm: 1200 },
+    "Go 7 dní": { price: 10900, freeHours: 168, freeKm: 700 },
+    "Go 4,5 dne": { price: 4690, freeHours: 108, freeKm: 600 },
+    "Go 4 dny": { price: 4190, freeHours: 96, freeKm: 500 }
+}
+,
+            }
+
+        };
+
+       
+function calculateRentalPrice(carClass, kilometres, hours) {
+    if (!pricing[carClass] || hours < 1 || kilometres < 0) {
+        return "Invalid input.";
+    }
+
+    const { hourly, fixed } = pricing[carClass];
+
+    // Initialize variables to track the best offer
+    let bestPrice = Infinity; // Set a high initial price so we can find the minimum
+    let bestPackage = null;
+
+    // Step 1: Calculate cost for hourly rental based on hours and kilometers
+    let hourlyTotalPrice = hourly.rate1 * Math.min(hours, 3) // charge rate1 for first 3 hours
+                           + hourly.rate2 * Math.max(0, hours - 3) // charge rate2 for additional hours
+                           + hourly.kmRate * kilometres; // charge for kilometers
+
+    // Step 2: Compare hourly rental with fixed packages
+    bestPrice = hourlyTotalPrice;
+    bestPackage = "Hourly Rate";
+
+    // Step 3: Loop through all available fixed packages to find the best one
+    for (const pkg in fixed) {
+        if (fixed.hasOwnProperty(pkg)) {
+            const currentPackage = fixed[pkg];
+
+            // Calculate the base price of the package
+            let basePrice = currentPackage.price;
+
+            // Calculate additional hours (rate2) if applicable
+            let additionalHours = Math.max(0, hours - currentPackage.freeHours);
+            let additionalKm = Math.max(0, kilometres - currentPackage.freeKm);
+
+            // Calculate the total price for this package
+            let totalPrice = basePrice
+                + (additionalHours > 0 ? additionalHours * hourly.rate2 : 0) // charge for extra hours
+                + (additionalKm > 0 ? additionalKm * hourly.kmRate : 0); // charge for extra kilometers
+
+            // Compare and update the best price if this package is cheaper
+            if (totalPrice < bestPrice) {
+                bestPrice = totalPrice;
+                bestPackage = pkg; // Save the package name
+            }
+        }
+    }
+
+    // Return the best option
+   return {
+    type: bestPackage === "Hourly Rate" ? "Hourly" : bestPackage,
+    totalPrice: bestPrice
+};
+
+}
+
+        // Example usage:
+        document.getElementById("calculatePrice").addEventListener("click", () => {
+            const carClass = document.getElementById("carClass").value;
+            const kilometres = parseFloat(document.getElementById("kilometres").value);
+            const hours = parseFloat(document.getElementById("hours").value);
+
+            const result = calculateRentalPrice(carClass, kilometres, hours);
+
+            if (result) {
+    document.getElementById("result").textContent =
+        result.type === "Hourly"
+            ? `Nejlepší cenu získáte při obyčejné výpůjčce účtované po hodinách a kilometrech: ${result.totalPrice.toFixed(2)} Kč.`
+            : `Nejlepší cenu získáte při použití slevové nabídky ${result.type}. Uvedený časový rozsah a nájezd vás vyjde na ${result.totalPrice.toFixed(2)} Kč.`;
+} else {
+    document.getElementById("result").textContent = "Nebyly nalezeny žádné platné nabídky.";
+}
+
+        });
+    });
+</script>
+
+<form>
+    <label for="carClass">Typ auta:</label>
+    <select id="carClass">
+        <option value="A">Citigo</option>
+        <option value="B">Fabia III/Rapid</option>
+        <option value="C">Fabia IV</option>
+	<option value="D">Scala/Kamiq</option>
+    </select>
+    <br />
+    <label for="hours">Doba výpůjčky:</label>
+    <input type="number" id="hours" required min="1" />
+    <br />
+    <label for="kilometres">Nájezd:</label>
+    <input type="number" id="kilometres" required />
+    <br />
+    
+    <button type="button" id="calculatePrice">Najít nejlepší cenu</button>
+</form>
+<div id="result"></div>
