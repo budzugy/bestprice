@@ -233,23 +233,25 @@ function calculateRentalPrice(carClass, kilometres, hours) {
 }
 
         // Example usage:
-        document.getElementById("calculatePrice").addEventListener("click", () => {
-            const carClass = document.getElementById("carClass").value;
-            const kilometres = parseFloat(document.getElementById("kilometres").value);
-            const hours = parseFloat(document.getElementById("hours").value);
+       document.getElementById("calculatePrice").addEventListener("click", () => {
+    const carClass = document.getElementById("carClass").value;
+    const kilometres = parseFloat(document.getElementById("kilometres").value);
+    const hours = parseFloat(document.getElementById("hours").value);
 
-            const result = calculateRentalPrice(carClass, kilometres, hours);
+    const result = calculateRentalPrice(carClass, kilometres, hours);
 
-            if (result) {
-    document.getElementById("result").textContent =
-        result.type === "Hourly"
-            ? `Nejlepší cenu získáte při obyčejné výpůjčce účtované po hodinách a kilometrech: ${result.totalPrice.toFixed(2)} Kč.`
-            : `Nejlepší cenu získáte při použití slevové nabídky ${result.type}. Uvedený časový rozsah a nájezd vás vyjde na ${result.totalPrice.toFixed(2)} Kč.`;
-} else {
-    document.getElementById("result").textContent = "Nebyly nalezeny žádné platné nabídky.";
-}
+    if (result) {
+        // Remove decimals by rounding the total price
+        const roundedPrice = Math.round(result.totalPrice);
 
-        });
+        document.getElementById("result").textContent =
+            result.type === "Hourly"
+                ? `Nejlepší cenu získáte při obyčejné výpůjčce účtované po hodinách a kilometrech: ${roundedPrice} Kč.`
+                : `Nejlepší cenu získáte při použití slevové nabídky ${result.type}. Uvedený časový rozsah a nájezd vás vyjde na ${roundedPrice} Kč.`;
+    } else {
+        document.getElementById("result").textContent = "Nebyly nalezeny žádné platné nabídky.";
+    }
+});
     });
 </script>
 
@@ -258,7 +260,7 @@ function calculateRentalPrice(carClass, kilometres, hours) {
 <div class="container">
 
 <form>
-    <label for="carClass">Typ auta:</label>
+    <label for="carClass">Kategorie auta:</label>
     <select id="carClass">
         <option value="A">Citigo</option>
         <option value="B">Fabia III/Rapid</option>
@@ -266,14 +268,14 @@ function calculateRentalPrice(carClass, kilometres, hours) {
 	<option value="D">Scala/Kamiq</option>
     </select>
     <br />
-    <label for="hours">Doba výpůjčky:</label>
-    <input type="number" id="hours" required min="1" />
+    <label for="hours">Délka výpůjčky (h):</label>
+    <input type="number" placeholder="Minimální délka výpůjčky je 1h" id="hours" required min="1" />
     <br />
-    <label for="kilometres">Nájezd:</label>
-    <input type="number" id="kilometres" required />
+    <label for="kilometres">Nájezd (km):</label>
+    <input type="number" placeholder="V ceně je vždy zahrnuto palivo" id="kilometres" required />
     <br />
     
-    <button type="button" id="calculatePrice">Najít nejlepší cenu</button>
+    <button type="button" id="calculatePrice">Spočítat cenu</button>
 </form>
 
 <p>
