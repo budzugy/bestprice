@@ -95,27 +95,27 @@ input, button {
     document.addEventListener("DOMContentLoaded", () => {
         // Define pricing logic
         const pricing = {
-            A: {
-                hourly: { rate1: 69, rate2: 39, kmRate: 6.9 },
+            D: {
+                hourly: { rate1: 119, rate2: 89, kmRate: 8.9 },
                 fixed: {
-    "Balíček XS": { price: 399, freeHours: 3, freeKm: 50 },
-    "Balíček S": { price: 299, freeHours: 6, freeKm: 0 },
-    "Balíček S+": { price: 749, freeHours: 6, freeKm: 100 },
-    "Balíček M": { price: 1390, freeHours: 12, freeKm: 180 },
-    "Balíček M+": { price: 1790, freeHours: 12, freeKm: 300 },
-    "Balíček L": { price: 2090, freeHours: 24, freeKm: 300 },
-    "Balíček XL": { price: 1990, freeHours: 48, freeKm: 120 },
-    "Balíček XL+": { price: 2290, freeHours: 48, freeKm: 300 },
-    "Balíček XXL": { price: 2490, freeHours: 72, freeKm: 400 },
-    "Jaro 7 dní": { price: 999999, freeHours: 168, freeKm: 1200 },
-    "Jaro 10 dní": { price: 999999, freeHours: 240, freeKm: 1200 },
-    "Go 7 dní": { price: 6800, freeHours: 168, freeKm: 700 },
-    "Go 4,5 dne": { price: 999999, freeHours: 108, freeKm: 600 },
-    "Go 4 dny": { price: 2990, freeHours: 96, freeKm: 500 }
+    "Balíček XS": { price: 849, freeHours: 3, freeKm: 50 },
+    "Balíček S": { price: 599, freeHours: 6, freeKm: 0 },
+    "Balíček S+": { price: 1499, freeHours: 6, freeKm: 100 },
+    "Balíček M": { price: 2499, freeHours: 12, freeKm: 180 },
+    "Balíček M+": { price: 2990, freeHours: 12, freeKm: 300 },
+    "Balíček L": { price: 3590, freeHours: 24, freeKm: 300 },
+    "Balíček XL": { price: 3490, freeHours: 48, freeKm: 120 },
+    "Balíček XL+": { price: 3790, freeHours: 48, freeKm: 300 },
+    "Balíček XXL": { price: 3990, freeHours: 72, freeKm: 400 },
+    "Jaro 7 dní": { price: 12999, freeHours: 168, freeKm: 1200 },
+    "Jaro 10 dní": { price: 14999, freeHours: 240, freeKm: 1200 },
+    "Go 7 dní": { price: 11900, freeHours: 168, freeKm: 700 },
+    "Go 4,5 dne": { price: 5190, freeHours: 108, freeKm: 600 },
+    "Go 4 dny": { price: 4590, freeHours: 96, freeKm: 500 }
 }
 ,
             },
-            B: {
+            A: {
                 hourly: { rate1: 79, rate2: 49, kmRate: 7.9 },
                 fixed: {
     "Balíček XS": { price: 449, freeHours: 3, freeKm: 50 },
@@ -135,7 +135,7 @@ input, button {
 }
 ,
             },
-            C: {
+            B: {
                 hourly: { rate1: 99, rate2: 69, kmRate: 7.9 },
                 fixed: {
     "Balíček XS": { price: 549, freeHours: 3, freeKm: 50 },
@@ -155,7 +155,7 @@ input, button {
 }
 ,
             },
- 	D: {
+ 	C: {
                 hourly: { rate1: 109, rate2: 79, kmRate: 8.9 },
                 fixed: {
     "Balíček XS": { price: 749, freeHours: 3, freeKm: 50 },
@@ -262,10 +262,10 @@ function calculateRentalPrice(carClass, kilometres, hours) {
 <form>
     <label for="carClass">Kategorie auta:</label>
     <select id="carClass">
-        <option value="A">Citigo</option>
-        <option value="B">Fabia III/Rapid</option>
-        <option value="C">Fabia IV</option>
-	<option value="D">Scala/Kamiq</option>
+        <option value="A">Fabia III/Rapid</option>
+        <option value="B">Fabia IV</option>
+	<option value="C">Scala/Kamiq</option>
+	<option value="D">Octavia</option>
     </select>
     <br />
     <label for="hours">Délka výpůjčky (h):</label>
