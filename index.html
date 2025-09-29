@@ -7,7 +7,7 @@
     <style>
         /* General Reset */
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Poppins-Medium", Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,6 +17,14 @@
             background-color: #f8f9fa;
         }
 
+
+@font-face {
+    font-family: "Poppins-Medium";   /* ← this is the name you will use later */
+    src: url("Poppins-Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
         /* Centered Container */
         .container {
             background: white;
@@ -24,7 +32,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 90%;
-            max-width: 400px;
+            max-width: 500px;
             text-align: center;
         }
 
@@ -60,8 +68,8 @@ input, button {
         }
 
         button {
-            background-color: #007bff;
-            color: white;
+            background-color: #53C3EB;
+            color: black;
             border: none;
             cursor: pointer;
             font-weight: bold;
@@ -73,7 +81,7 @@ input, button {
 
         #result {
             font-size: 1rem;
-            color: #28a745;
+            color: black;
             margin-top: 15px;
 		padding: 10px;
        
@@ -98,15 +106,15 @@ input, button {
             D: {
                 hourly: { rate1: 119, rate2: 89, kmRate: 8.9 },
                 fixed: {
-    "Balíček XS": { price: 849, freeHours: 3, freeKm: 50 },
-    "Balíček S": { price: 599, freeHours: 6, freeKm: 0 },
-    "Balíček S+": { price: 1499, freeHours: 6, freeKm: 100 },
-    "Balíček M": { price: 2499, freeHours: 12, freeKm: 180 },
-    "Balíček M+": { price: 2990, freeHours: 12, freeKm: 300 },
-    "Balíček L": { price: 3590, freeHours: 24, freeKm: 300 },
-    "Balíček XL": { price: 3490, freeHours: 48, freeKm: 120 },
-    "Balíček XL+": { price: 3790, freeHours: 48, freeKm: 300 },
-    "Balíček XXL": { price: 3990, freeHours: 72, freeKm: 400 },
+   "XS": { price: 849, freeHours: 3, freeKm: 50 },
+    "S": { price: 599, freeHours: 6, freeKm: 0 },
+    "S+": { price: 1499, freeHours: 6, freeKm: 100 },
+    "M": { price: 2499, freeHours: 12, freeKm: 180 },
+    "M+": { price: 2990, freeHours: 12, freeKm: 300 },
+    "L": { price: 3590, freeHours: 24, freeKm: 300 },
+    "XL": { price: 3490, freeHours: 48, freeKm: 120 },
+    "XL+": { price: 3790, freeHours: 48, freeKm: 300 },
+    "XXL": { price: 3990, freeHours: 72, freeKm: 400 },
     "Jaro 7 dní": { price: 12999, freeHours: 168, freeKm: 1200 },
     "Jaro 10 dní": { price: 14999, freeHours: 240, freeKm: 1200 },
     "Go 7 dní": { price: 11900, freeHours: 168, freeKm: 700 },
@@ -118,15 +126,15 @@ input, button {
             A: {
                 hourly: { rate1: 79, rate2: 49, kmRate: 7.9 },
                 fixed: {
-    "Balíček XS": { price: 449, freeHours: 3, freeKm: 50 },
-    "Balíček S": { price: 299, freeHours: 6, freeKm: 0 },
-    "Balíček S+": { price: 849, freeHours: 6, freeKm: 100 },
-    "Balíček M": { price: 1590, freeHours: 12, freeKm: 180 },
-    "Balíček M+": { price: 1990, freeHours: 12, freeKm: 300 },
-    "Balíček L": { price: 2390, freeHours: 24, freeKm: 300 },
-    "Balíček XL": { price: 2290, freeHours: 48, freeKm: 120 },
-    "Balíček XL+": { price: 2590, freeHours: 48, freeKm: 300 },
-    "Balíček XXL": { price: 2790, freeHours: 72, freeKm: 400 },
+    "XS": { price: 449, freeHours: 3, freeKm: 50 },
+    "S": { price: 299, freeHours: 6, freeKm: 0 },
+    "S+": { price: 849, freeHours: 6, freeKm: 100 },
+    "M": { price: 1590, freeHours: 12, freeKm: 180 },
+    "M+": { price: 1990, freeHours: 12, freeKm: 300 },
+    "L": { price: 2390, freeHours: 24, freeKm: 300 },
+    "XL": { price: 2290, freeHours: 48, freeKm: 120 },
+    "XL+": { price: 2590, freeHours: 48, freeKm: 300 },
+    "XXL": { price: 2790, freeHours: 72, freeKm: 400 },
     "Jaro 7 dní": { price: 9999, freeHours: 168, freeKm: 1200 },
     "Jaro 10 dní": { price: 11999, freeHours: 240, freeKm: 1200 },
     "Go 7 dní": { price: 7800, freeHours: 168, freeKm: 700 },
@@ -138,35 +146,36 @@ input, button {
             B: {
                 hourly: { rate1: 99, rate2: 69, kmRate: 7.9 },
                 fixed: {
-    "Balíček XS": { price: 549, freeHours: 3, freeKm: 50 },
-    "Balíček S": { price: 399, freeHours: 6, freeKm: 0 },
-    "Balíček S+": { price: 1049, freeHours: 6, freeKm: 100 },
-    "Balíček M": { price: 1990, freeHours: 12, freeKm: 180 },
-    "Balíček M+": { price: 2390, freeHours: 12, freeKm: 300 },
-    "Balíček L": { price: 2990, freeHours: 24, freeKm: 300 },
-    "Balíček XL": { price: 2890, freeHours: 48, freeKm: 120 },
-    "Balíček XL+": { price: 3190, freeHours: 48, freeKm: 300 },
-    "Balíček XXL": { price: 3390, freeHours: 72, freeKm: 400 },
+    "XS": { price: 549, freeHours: 3, freeKm: 50 },
+    "S": { price: 399, freeHours: 6, freeKm: 0 },
+    "S+": { price: 1049, freeHours: 6, freeKm: 100 },
+    "M": { price: 1990, freeHours: 12, freeKm: 180 },
+    "M+": { price: 2390, freeHours: 12, freeKm: 300 },
+    "L": { price: 2990, freeHours: 24, freeKm: 300 },
+    "XL": { price: 2890, freeHours: 48, freeKm: 120 },
+    "XL+": { price: 3190, freeHours: 48, freeKm: 300 },
+    "XXL": { price: 3390, freeHours: 72, freeKm: 400 },
     "Jaro 7 dní": { price: 10999, freeHours: 168, freeKm: 1200 },
     "Jaro 10 dní": { price: 12999, freeHours: 240, freeKm: 1200 },
     "Go 7 dní": { price: 9900, freeHours: 168, freeKm: 700 },
     "Go 4,5 dne": { price: 4390, freeHours: 108, freeKm: 600 },
     "Go 4 dny": { price: 3890, freeHours: 96, freeKm: 500 }
+
 }
 ,
             },
  	C: {
                 hourly: { rate1: 109, rate2: 79, kmRate: 8.9 },
                 fixed: {
-    "Balíček XS": { price: 749, freeHours: 3, freeKm: 50 },
-    "Balíček S": { price: 499, freeHours: 6, freeKm: 0 },
-    "Balíček S+": { price: 1349, freeHours: 6, freeKm: 100 },
-    "Balíček M": { price: 2290, freeHours: 12, freeKm: 180 },
-    "Balíček M+": { price: 2690, freeHours: 12, freeKm: 300 },
-    "Balíček L": { price: 3290, freeHours: 24, freeKm: 300 },
-    "Balíček XL": { price: 3190, freeHours: 48, freeKm: 120 },
-    "Balíček XL+": { price: 3290, freeHours: 48, freeKm: 300 },
-    "Balíček XXL": { price: 3690, freeHours: 72, freeKm: 400 },
+    "XS": { price: 749, freeHours: 3, freeKm: 50 },
+    "S": { price: 499, freeHours: 6, freeKm: 0 },
+    "S+": { price: 1349, freeHours: 6, freeKm: 100 },
+    "M": { price: 2290, freeHours: 12, freeKm: 180 },
+    "M+": { price: 2690, freeHours: 12, freeKm: 300 },
+    "L": { price: 3290, freeHours: 24, freeKm: 300 },
+    "XL": { price: 3190, freeHours: 48, freeKm: 120 },
+    "XL+": { price: 3290, freeHours: 48, freeKm: 300 },
+    "XXL": { price: 3690, freeHours: 72, freeKm: 400 },
     "Jaro 7 dní": { price: 11999, freeHours: 168, freeKm: 1200 },
     "Jaro 10 dní": { price: 13999, freeHours: 240, freeKm: 1200 },
     "Go 7 dní": { price: 10900, freeHours: 168, freeKm: 700 },
@@ -244,10 +253,10 @@ function calculateRentalPrice(carClass, kilometres, hours) {
         // Remove decimals by rounding the total price
         const roundedPrice = Math.round(result.totalPrice);
 
-        document.getElementById("result").textContent =
+        document.getElementById("result").innerHTML =
             result.type === "Hourly"
-                ? `Nejlepší cenu získáte při obyčejné výpůjčce účtované po hodinách a kilometrech: ${roundedPrice} Kč.`
-                : `Nejlepší cenu získáte při použití slevové nabídky ${result.type}. Uvedený časový rozsah a nájezd vás vyjde na ${roundedPrice} Kč.`;
+                ? `Nejlepší volbou je v tomto případě <b>klasická výpůjčka</b> po hodinách a kilometrech. <p> Vyjde vás to na <b> ${roundedPrice} Kč</b>.`
+                : `Nejvýhodnější cenu získáte s <b>balíčkem ${result.type}</b>. <p>Celkově vás plánovaný čas a kilometry vyjdou na <b> ${roundedPrice} Kč</b>.`;
     } else {
         document.getElementById("result").textContent = "Nebyly nalezeny žádné platné nabídky.";
     }
